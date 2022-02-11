@@ -576,7 +576,8 @@ end
     -- local item_map = elements[item_type:lower()..'_of']
     
     -- for element in (potential_elements.it or it)(potential_elements) do
-        -- if valid_elements:contains(element) and (player.inventory[item_map[element]] or player.wardrobe[item_map[element]] or player.wardrobe2[item_map[element]]) or player.wardrobe3[item_map[element]] or player.wardrobe4[item_map[element]] then
+        -- if valid_elements:contains(element) and (player.inventory[item_map[element]] or player.wardrobe[item_map[element]] or player.wardrobe2[item_map[element]]) or player.wardrobe3[item_map[element]] or player.wardrobe4[item_map[element]] or player.wardrobe4[item_map[element]]
+		or player.wardrobe5[item_map[element]] or player.wardrobe6[item_map[element]] or player.wardrobe7[item_map[element]] or player.wardrobe8[item_map[element]] then
             -- return item_map[element]
         -- end
     -- end
@@ -909,7 +910,7 @@ end
 -- Variables it sets: classes.Daytime, and classes.DuskToDawn.  They are set to true
 
 function item_available(item)
-	if player.inventory[item] or player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] or player.satchel[item] then
+	if player.inventory[item] or player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] or player.wardrobe5[item] or player.wardrobe6[item] or player.wardrobe7[item] or player.wardrobe8[item] or player.satchel[item] then
 		return true
 	else
 		return false
@@ -917,8 +918,7 @@ function item_available(item)
 end
 
 function item_owned(item)
-	if player.inventory[item] or player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] or player.safe[item] or player.safe2[item] or player.storage[item] or player.locker[item] or player.satchel[item] or player.sack[item] or player.case[item] then
-		return true
+ 	if player.inventory[item] or player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] or player.wardrobe5[item] or player.wardrobe6[item] or player.wardrobe7[item] or player.wardrobe8[item] or player.safe[item] or player.safe2[item] or player.storage[item] or player.locker[item] or player.satchel[item] or player.sack[item] or player.case[item] then		return true
 	else
 		return false
 	end
@@ -2013,8 +2013,11 @@ function ammo_left()
 	local Wardrobe2Ammo = ((player.wardrobe2[player.equipment.ammo] or {}).count or 0)
 	local Wardrobe3Ammo = ((player.wardrobe3[player.equipment.ammo] or {}).count or 0)
 	local Wardrobe4Ammo = ((player.wardrobe4[player.equipment.ammo] or {}).count or 0)
-		
-	local AmmoLeft = InventoryAmmo + WardrobeAmmo + Wardrobe2Ammo + Wardrobe3Ammo + Wardrobe4Ammo 
+	local Wardrobe5Ammo = ((player.wardrobe5[player.equipment.ammo] or {}).count or 0)
+	local Wardrobe6Ammo = ((player.wardrobe6[player.equipment.ammo] or {}).count or 0)
+	local Wardrobe7Ammo = ((player.wardrobe7[player.equipment.ammo] or {}).count or 0)
+	local Wardrobe8Ammo = ((player.wardrobe8[player.equipment.ammo] or {}).count or 0)	
+	local AmmoLeft = InventoryAmmo + WardrobeAmmo + Wardrobe2Ammo + Wardrobe3Ammo + Wardrobe4Ammo + Wardrobe5Ammo + Wardrobe6Ammo + Wardrobe7Ammo + Wardrobe8Ammo
 		
 	return AmmoLeft	
 end
