@@ -577,7 +577,7 @@ end
     
     -- for element in (potential_elements.it or it)(potential_elements) do
         -- if valid_elements:contains(element) and (player.inventory[item_map[element]] or player.wardrobe[item_map[element]] or player.wardrobe2[item_map[element]]) or player.wardrobe3[item_map[element]] or player.wardrobe4[item_map[element]] or player.wardrobe4[item_map[element]]
-		or player.wardrobe5[item_map[element]] or player.wardrobe6[item_map[element]] or player.wardrobe7[item_map[element]] or player.wardrobe8[item_map[element]] then
+	--	or player.wardrobe5[item_map[element]] or player.wardrobe6[item_map[element]] or player.wardrobe7[item_map[element]] or player.wardrobe8[item_map[element]] then
             -- return item_map[element]
         -- end
     -- end
